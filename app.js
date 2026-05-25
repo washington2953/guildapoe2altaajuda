@@ -6,14 +6,27 @@
 // ── COLE AQUI A SUA CONFIGURAÇÃO DO FIREBASE ────────────────
 // Siga o guia em README.md para obter esses valores.
 // Depois de colar, remova esta linha de comentário.
-const FIREBASE_CONFIG = {
-  apiKey:            "COLE_AQUI",
-  authDomain:        "COLE_AQUI",
-  projectId:         "COLE_AQUI",
-  storageBucket:     "COLE_AQUI",
-  messagingSenderId: "COLE_AQUI",
-  appId:             "COLE_AQUI"
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyD2lRbR5TsZw5fUZi7e7sYwA2hs4SLORgs",
+  authDomain: "guilda-poe2.firebaseapp.com",
+  projectId: "guilda-poe2",
+  storageBucket: "guilda-poe2.firebasestorage.app",
+  messagingSenderId: "727385900218",
+  appId: "1:727385900218:web:0f3fb2e51a58cc18ad2e83",
+  measurementId: "G-H3M3MPVZL4"
 };
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 // ────────────────────────────────────────────────────────────
 
 import { initializeApp }                          from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";

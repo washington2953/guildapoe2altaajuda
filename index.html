@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guilda POE2 Alta Ajuda</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- ===== HEADER ===== -->
+  <header>
+
+    <!-- Logo SVG fiel ao Path of Exile 2 -->
+    <svg class="logo-poe2" viewBox="0 0 340 160" xmlns="http://www.w3.org/2000/svg" aria-label="Path of Exile 2 logo">
+      <defs>
+        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%"   stop-color="#efe0b0"/>
+          <stop offset="40%"  stop-color="#c8a96e"/>
+          <stop offset="100%" stop-color="#6a4a18"/>
+        </linearGradient>
+        <linearGradient id="goldGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%"   stop-color="#e8d090"/>
+          <stop offset="50%"  stop-color="#b8922a"/>
+          <stop offset="100%" stop-color="#5a3a10"/>
+        </linearGradient>
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="2" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+
+      <!-- Skull icon estilo POE2 centralizado acima do texto -->
+      <g transform="translate(170,38)" filter="url(#glow)">
+        <!-- Crânio -->
+        <ellipse cx="0" cy="0" rx="18" ry="16" fill="url(#goldGrad)" />
+        <!-- olhos -->
+        <ellipse cx="-7" cy="-3" rx="4.5" ry="5" fill="#0a0a0c"/>
+        <ellipse cx="7"  cy="-3" rx="4.5" ry="5" fill="#0a0a0c"/>
+        <!-- brilho nos olhos -->
+        <circle cx="-8.5" cy="-5" r="1.2" fill="rgba(200,169,110,0.5)"/>
+        <circle cx="5.5"  cy="-5" r="1.2" fill="rgba(200,169,110,0.5)"/>
+        <!-- dentes -->
+        <rect x="-10" y="9"  width="4" height="6" rx="1" fill="#0a0a0c"/>
+        <rect x="-4"  y="10" width="4" height="5" rx="1" fill="#0a0a0c"/>
+        <rect x="2"   y="10" width="4" height="5" rx="1" fill="#0a0a0c"/>
+        <rect x="7"   y="9"  width="4" height="6" rx="1" fill="#0a0a0c"/>
+        <!-- linha da mandibula -->
+        <path d="M-18 6 Q0 14 18 6" fill="none" stroke="url(#goldGrad2)" stroke-width="1.5"/>
+        <!-- espinhos laterais do crânio -->
+        <path d="M-18-4 L-24-8 L-20-2 Z" fill="url(#goldGrad2)"/>
+        <path d="M18-4  L24-8  L20-2  Z" fill="url(#goldGrad2)"/>
+      </g>
+
+      <!-- PATH OF -->
+      <text x="170" y="90" text-anchor="middle"
+            font-family="'Cinzel', serif" font-size="22" font-weight="700"
+            letter-spacing="12" fill="url(#goldGrad)" filter="url(#glow)">PATH OF</text>
+
+      <!-- EXILE -->
+      <text x="170" y="122" text-anchor="middle"
+            font-family="'Cinzel', serif" font-size="42" font-weight="900"
+            letter-spacing="8" fill="url(#goldGrad)" filter="url(#glow)">EXILE</text>
+
+      <!-- linha decorativa sob EXILE -->
+      <line x1="60" y1="130" x2="280" y2="130" stroke="url(#goldGrad2)" stroke-width="1"/>
+
+      <!-- 2 estilo POE2 — numeral grande à direita -->
+      <text x="298" y="125" text-anchor="start"
+            font-family="'Cinzel', serif" font-size="38" font-weight="900"
+            fill="url(#goldGrad)" filter="url(#glow)">2</text>
+
+      <!-- gemas decorativas -->
+      <rect x="56"  y="127" width="7" height="7" fill="#c8a96e" transform="rotate(45 59 130)" opacity="0.8"/>
+      <rect x="278" y="127" width="7" height="7" fill="#c8a96e" transform="rotate(45 281 130)" opacity="0.8"/>
+    </svg>
+
+    <h1 class="guild-name">
+      Guilda Alta Ajuda
+      <span>Registro Oficial de Membros · Wraeclast</span>
+    </h1>
+
+    <div class="divider">
+      <div class="divider-line"></div>
+      <div class="divider-gem"></div>
+      <div class="divider-line"></div>
+    </div>
+
+    <p class="header-desc">Registre-se nos pergaminhos da guilda e una-se aos exilados</p>
+  </header>
+
+  <!-- ===== NAV TABS — Membros primeiro, Registrar destacado ===== -->
+  <nav class="nav-tabs" role="tablist" aria-label="Navegação">
+    <button
+      id="tab-members"
+      class="nav-tab active"
+      onclick="switchTab('members', this)"
+      role="tab"
+      aria-selected="true"
+      aria-controls="panel-members"
+    >Membros</button>
+
+    <button
+      id="tab-register"
+      class="nav-tab tab-highlight"
+      onclick="switchTab('register', this)"
+      role="tab"
+      aria-selected="false"
+      aria-controls="panel-register"
+    >Registrar</button>
+  </nav>
+
+  <!-- ===== PANEL: MEMBROS (padrão) ===== -->
+  <div id="panel-members" class="panel active" role="tabpanel" aria-labelledby="tab-members">
+    <div class="card">
+      <div class="card-title">Pergaminhos da Guilda</div>
+
+      <div class="search-bar">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Buscar por nick, nome ou plataforma..."
+          oninput="renderMembers()"
+          autocomplete="off"
+        >
+      </div>
+
+      <div id="member-count" class="member-count"></div>
+      <div id="member-list"></div>
+    </div>
+  </div>
+
+  <!-- ===== PANEL: REGISTRAR ===== -->
+  <div id="panel-register" class="panel" role="tabpanel" aria-labelledby="tab-register">
+    <div class="card">
+      <div class="card-title">Jurar Lealdade à Guilda</div>
+
+      <div id="alert-success" class="alert alert-success">
+        <span>⚔</span>
+        <span id="alert-msg">Seu nome foi gravado nos pergaminhos!</span>
+      </div>
+      <div id="alert-error" class="alert alert-error">
+        <span>☠</span>
+        <span id="alert-err-msg">Preencha todos os campos obrigatórios.</span>
+      </div>
+
+      <div class="form-group">
+        <label for="reg-nick">Nick <span class="required">*</span></label>
+        <input type="text" id="reg-nick" placeholder="Seu nick no jogo..." maxlength="40" autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <label for="reg-nome">Nome <span class="required">*</span></label>
+        <input type="text" id="reg-nome" placeholder="Seu nome real..." maxlength="60" autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <label for="reg-plataforma">Plataforma <span class="required">*</span></label>
+        <select id="reg-plataforma">
+          <option value="" disabled selected>Selecione a plataforma...</option>
+          <option value="PC">PC</option>
+          <option value="PS5">PlayStation 5</option>
+          <option value="Xbox">Xbox</option>
+        </select>
+      </div>
+
+      <div class="form-actions">
+        <button class="btn btn-primary" onclick="registerMember()">Jurar Lealdade</button>
+        <button class="btn btn-secondary" onclick="clearForm()">Limpar</button>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<!-- ===== MODAL DE EDIÇÃO ===== -->
+<div id="modal-overlay" class="modal-overlay" onclick="closeModal(event)">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal-close" onclick="closeModal({})" aria-label="Fechar">×</button>
+    <div class="modal-title" id="modal-title">Alterar Registro</div>
+
+    <div id="modal-alert" class="alert alert-error" style="margin-bottom:16px">
+      <span>☠</span> <span id="modal-alert-msg">Preencha todos os campos.</span>
+    </div>
+
+    <div class="form-group">
+      <label for="edit-nick">Nick <span class="required">*</span></label>
+      <input type="text" id="edit-nick" maxlength="40" autocomplete="off">
+    </div>
+    <div class="form-group">
+      <label for="edit-nome">Nome <span class="required">*</span></label>
+      <input type="text" id="edit-nome" maxlength="60" autocomplete="off">
+    </div>
+    <div class="form-group">
+      <label for="edit-plataforma">Plataforma <span class="required">*</span></label>
+      <select id="edit-plataforma">
+        <option value="PC">PC</option>
+        <option value="PS5">PlayStation 5</option>
+        <option value="Xbox">Xbox</option>
+      </select>
+    </div>
+    <div class="form-actions">
+      <button class="btn btn-primary" onclick="saveEdit()">Salvar Alterações</button>
+      <button class="btn btn-secondary" onclick="closeModal({})">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="divider" style="max-width:300px">
+    <div class="divider-line"></div>
+    <div class="divider-gem"></div>
+    <div class="divider-line"></div>
+  </div>
+  <p style="margin-top:16px">Guilda POE2 Alta Ajuda · Path of Exile II</p>
+  <p style="margin-top:4px; font-style:italic; color:#5a4d3a">
+    "In Wraeclast, only the strong survive — and the wise unite."
+  </p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
